@@ -14,16 +14,15 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Drivetrain extends SubsystemBase {
   /** Creates a new drivetrain. */
   public Drivetrain() {}
-  public static WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(Constants.Ldrive);
-  public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(Constants.Lfollow);
-  public static WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(Constants.Rdrive);
-  public static WPI_TalonSRX m_rightFollow = new WPI_TalonSRX(Constants.Rfollow);
+  public static WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(6);
+  public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX("7");
+  
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    SmartDashboard.putNumber("Left Speed:", m_leftMotor.get());
-    SmartDashboard.putNumber("Right Speed:", m_rightMotor.get());
+    //SmartDashboard.putNumber("Left Speed:", m_leftMotor.get());
+    //SmartDashboard.putNumber("Right Speed:", m_rightMotor.get());
     //Puts the speed being sent to the motors on the dashboard, helpful for diagnostics
   }
 
@@ -37,9 +36,9 @@ public class Drivetrain extends SubsystemBase {
    */
   public void tankdrive(double left, double right) {
   m_leftMotor.set(left);
-  m_rightMotor.set(right);
+
   m_leftFollow.set(left);
-  m_rightFollow.set(right);
+
 
  }
 
@@ -48,6 +47,7 @@ public class Drivetrain extends SubsystemBase {
   * @param stickfb
   * @param sticklr
   */
+  /* 
  public void arcadedrive(double stickfb, double sticklr) {
   
   m_rightMotor.set(sticklr - stickfb);
@@ -55,17 +55,17 @@ public class Drivetrain extends SubsystemBase {
   m_leftMotor.set(stickfb + sticklr);
   m_leftFollow.set(stickfb + sticklr);
 
- }
+ }*/
 
 
 /**
  * Sets all motors to 0% output
  */
 public void allstop() {
-  m_rightMotor.set(0);
+
   m_leftMotor.set(0);
   m_leftFollow.set(0);
-  m_rightFollow.set(0);
+  
  }
 
 }
