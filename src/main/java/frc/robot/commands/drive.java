@@ -5,15 +5,15 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.drivetrain;
+import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Joystick;
-public class drive extends CommandBase {
- private final drivetrain m_drivetrain;
+public class Drive extends CommandBase {
+ private final Drivetrain m_drivetrain;
  private final Joystick m_stick = new Joystick(0);
 
 
   /** Creates a new drive. */
-  public drive(drivetrain dt) {
+  public Drive(Drivetrain dt) {
     m_drivetrain = dt;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(dt);

@@ -11,9 +11,9 @@ import frc.robot.Constants;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class drivetrain extends SubsystemBase {
+public class Drivetrain extends SubsystemBase {
   /** Creates a new drivetrain. */
-  public drivetrain() {}
+  public Drivetrain() {}
   public static WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(Constants.Ldrive);
   public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(Constants.Lfollow);
   public static WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(Constants.Rdrive);

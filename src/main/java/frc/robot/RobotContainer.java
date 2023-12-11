@@ -16,16 +16,16 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final drivetrain m_drivetrain = new drivetrain();
-  private final drive m_drive = new drive(m_drivetrain);
-  private final Command m_autoCommand = new autonomous(m_drivetrain);
+  private final Drivetrain m_drivetrain = new Drivetrain();
+  private final Drive m_drive = new Drive(m_drivetrain);
+  private final Command m_autoCommand = new Autonomous(m_drivetrain);
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    m_drivetrain.setDefaultCommand(new drive(m_drivetrain));
+    m_drivetrain.setDefaultCommand(new Drive(m_drivetrain));
   }
 
   /**
