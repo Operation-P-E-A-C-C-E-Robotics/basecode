@@ -15,8 +15,8 @@ public class Drivetrain extends SubsystemBase {
   /** Creates a new drivetrain. */
   public Drivetrain() {}
   public static WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(6);
-  public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX("7");
-  
+  public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(7);
+
 
   @Override
   public void periodic() {
