@@ -14,9 +14,10 @@ package frc.robot;
  */
 public final class Constants {
 
+    public static final int Rdrive = 2;
+    public static final int Rfollow = 3;
     public static final int Ldrive = 0;
-    public static final int Lfollow = 1;
-    
+    public static final int Lfollow = 1; 
     
 
 }

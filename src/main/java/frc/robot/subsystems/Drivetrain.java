@@ -36,13 +36,13 @@ public class Drivetrain extends SubsystemBase {
    * @param left - Power to send to the left side of the drive train, -1 - 1
    * @param right - Power to send to the riht side of the drive train, -1 - 1
    */
-  public void tankdrive(double left, double right) {
-  m_leftMotor.set(left);
-
-  m_leftFollow.set(left);
-
-
- }
+  public void tankdrive(double left, double right)
+   {
+    m_rightMotor.set(right);
+    m_rightFollow.set(right);
+    m_leftMotor.set(left);
+    m_leftFollow.set(left);
+   }
 
  /**
   * Arcade Drive - Accepts joystick inputs, Takes the joystick's forward and backward, left and right and converts it into a percentage and passes it to the motors giving beter control to the driver
@@ -65,9 +65,10 @@ public class Drivetrain extends SubsystemBase {
  */
 public void allstop() {
 
+  m_rightMotor.set(0);
+  m_rightFollow.set(0);
   m_leftMotor.set(0);
   m_leftFollow.set(0);
-  
  }
 
 }
