@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final FLOCCINAUCINIHILIPILIFICATION m_drivetrain = new FLOCCINAUCINIHILIPILIFICATION();
+  private final Drivetrain m_drivetrain = new Drivetrain();
   private final Drive m_drive = new Drive(m_drivetrain);
   private final Command m_autoCommand = new Autonomous(m_drivetrain);
 
