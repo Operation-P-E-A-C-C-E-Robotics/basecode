@@ -8,16 +8,18 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import frc.robot.Constants;
+import static frc.robot.Constants.DriveBase.*;  
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import java.util.function.DoubleSupplier;
 
 public class Drivetrain extends SubsystemBase {
   /** Creates a new drivetrain. */
   public Drivetrain() {}
-  public static WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(4);
-  public static WPI_TalonSRX m_rightFollow = new WPI_TalonSRX(5);
-  public static WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(6);
-  public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(7);
+  public static WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(Rdrive);
+  public static WPI_TalonSRX m_rightFollow = new WPI_TalonSRX(Rfollow);
+  public static WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(Ldrive);
+  public static WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(Lfollow);
 
 
   @Override
@@ -27,8 +29,6 @@ public class Drivetrain extends SubsystemBase {
     //SmartDashboard.putNumber("Right Speed:", m_rightMotor.get());
     //Puts the speed being sent to the motors on the dashboard, helpful for diagnostics
   }
-
-
 
 
   /**
@@ -69,6 +69,7 @@ public void allstop() {
   m_rightFollow.set(0);
   m_leftMotor.set(0);
   m_leftFollow.set(0);
+
  }
 
 }

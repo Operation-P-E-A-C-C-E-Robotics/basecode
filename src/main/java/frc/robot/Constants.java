@@ -14,10 +14,22 @@ package frc.robot;
  */
 public final class Constants {
 
-    public static final int Rdrive = 2;
-    public static final int Rfollow = 3;
-    public static final int Ldrive = 0;
-    public static final int Lfollow = 1; 
+    public static final class DriveBase
+    {
+        //MOTOR CANIDS
+        public static final int Rdrive = 2;
+        public static final int Rfollow = 3;
+        public static final int Ldrive = 0;
+        public static final int Lfollow = 1;         
+    }
+
+    public static final class Intake
+    {
+        //MOTOR CANIDS
+        public static final int rightRoller = 0;//TODO
+        public static final int leftRoller = 0;//TODO
+    }
+
     
 
 }

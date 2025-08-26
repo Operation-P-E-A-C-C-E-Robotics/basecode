@@ -7,7 +7,9 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
-
+import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.commands.Drive;
+//import frc.lib.util.ButtonMap;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -16,6 +18,8 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
+  private final Joystick driverJoystick = new Joystick(0);
+  private final Joystick operatorJoystick = new Joystick(1);
   private final Drivetrain m_drivetrain = new Drivetrain();
   private final Drive m_drive = new Drive(m_drivetrain);
   private final Command m_autoCommand = new Autonomous(m_drivetrain);
@@ -34,7 +38,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+      m_drive.withLeft(() -> driverJoystick.getRawAxis(0)).withRight(() -> driverJoystick.getRawAxis(1));
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

@@ -6,9 +6,16 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
+
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj.Joystick;
 public class Drive extends CommandBase {
 private final Drivetrain m_drivetrain;
+private DoubleSupplier 
+  leftValue = () -> 0,
+  rightValue = () -> 0;
+  
 //controller go here
 
 
@@ -28,6 +35,18 @@ private final Drivetrain m_drivetrain;
   @Override
   public void execute() {
     //missing code
+  }
+
+  public Drive withLeft(DoubleSupplier leftValue)
+  {
+    this.leftValue = leftValue;
+    return this;
+  }
+
+  public Drive withRight(DoubleSupplier rightValue)
+  {
+    this.rightValue = rightValue;
+    return this;
   }
 
   // Called once the command ends or is interrupted.
