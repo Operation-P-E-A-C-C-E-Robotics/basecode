@@ -16,20 +16,26 @@ public final class Constants {
 
     public static final class DriveBase
     {
-        //MOTOR CANIDS
-        public static final int Rdrive = 2;
-        public static final int Rfollow = 3;
-        public static final int Ldrive = 0;
-        public static final int Lfollow = 1;         
+       //MOTOR CANIDS
+        public static final int Rdrive = 2;//CAN
+        public static final int Rfollow = 3; //CAN
+        public static final int Ldrive = 0; //CAN
+        public static final int Lfollow = 1;  //CAN
     }
 
     public static final class Intake
     {
         //MOTOR CANIDS
-        public static final int rightRoller = 0;//TODO
-        public static final int leftRoller = 0;//TODO
+        public static final int rightRoller = 0;//TODO, PWM
+        public static final int leftRoller = 0;//TODO, PWM
+        public static final double motorIntakeSpeed = 0.3;
+        public static final int intakeButtonID = 3;
     }
 
-    
-
+    public static final class Shooter
+    {
+        //MOTOR CANIDS
+        public static final int shootOne = 6; //hehehehehehe also CAN
+        public static final int shootTwo = 7; //hehehehhehehehehehehhehehhehehhe also CAN
+    }
 }

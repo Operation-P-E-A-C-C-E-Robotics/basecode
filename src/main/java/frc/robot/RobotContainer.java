@@ -7,8 +7,9 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
-import frc.robot.commands.Drive;
+import edu.wpi.first.wpilibj.XboxController;
 //import frc.lib.util.ButtonMap;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -39,7 +40,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-      m_drive.withLeft(() -> driverJoystick.getRawAxis(0)).withRight(() -> driverJoystick.getRawAxis(1));
+    m_drive.withLeft(() -> driverJoystick.getRawAxis(0)).withRight(() -> driverJoystick.getRawAxis(1));
   }
 
   /**
@@ -51,4 +52,33 @@ public class RobotContainer {
     // An ExampleCommand will run in autonomous
     return m_autoCommand;
   }
+
+  //private final OIEntry[]
+
+  // private final OIEntry[] operatorsMap = new OIEntry[] {
+  //   Button.onHold(sushi.place(() -> (elevator.getHeight() < 5.0) && (elevator.getHeight() > 1.5)), 8),
+  //   Button.onHold(sushi.intake(), 7),
+  //   Button.onHold(chute.intake(), 7),
+  //   Button.onRelease(chute.rest(), 7),
+  //   Button.onHold(chute.unjam().alongWith(sushi.panic()), 5),
+  //   Button.onRelease(chute.rest(), 5),
+    
+  //   Button.onHold(automationCommands.l1ElevatorWrist(), 3),
+  //   Button.onHold(automationCommands.l2ElevatorWrist(), 2),
+  //   MultiButton.onHold(automationCommands.l2_5ElevatorWrist(), 9, 2), //
+  //   Button.onHold(automationCommands.l3ElevatorWrist(), 1),
+  //   MultiButton.onHold(automationCommands.l3_5ElevatorWrist(), 9, 1), // TODO PARKER Do The Buttons
+  //   Button.onHold(automationCommands.l4ElevatorWrist(), 4),
+    
+  //   MultiButton.onHold(climber.deploy(), 9, 10),
+  //   MultiButton.onHold(chute.dropCommand(), 9, 10),
+    
+  //   Button.onPress(elevator.goToSetpoint(ElevatorSetpoints.REST),12),
+  //   Button.onPress(wrist.goToSetpoint(WristSetpoints.REST),12),
+    
+  //   JoystickTrigger.onMove(operatorJoystick, elevator.manualInput(() -> -operatorJoystick.getRawAxis(3)*0.3), 3, 0.15),
+  //   JoystickTrigger.onMove(operatorJoystick, wrist.manualInput(() -> -operatorJoystick.getRawAxis(1)*0.3), 1, 0.15),
+  //   JoystickTrigger.onMove(operatorJoystick, climber.manualInput(() -> -operatorJoystick.getRawAxis(0)*0.5), 0, 0.2),
+  // };
+  
 }
