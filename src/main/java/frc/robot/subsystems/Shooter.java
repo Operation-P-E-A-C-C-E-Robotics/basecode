@@ -5,13 +5,27 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import static frc.robot.Constants.Shooter.*;
+
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 public class Shooter extends SubsystemBase {
+  public final TalonSRX motorOne = new TalonSRX(shootOne);
+  public final TalonSRX motorTwo = new TalonSRX(shootTwo);
   /** Creates a new Shooter. */
-  public Shooter() {}
+  public Shooter() 
+  {
+
+  }
+
+  public void Shoot()
+  {
+    //Put Stuff here
+  }
 
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public void periodic() 
+  {
+  
   }
 }

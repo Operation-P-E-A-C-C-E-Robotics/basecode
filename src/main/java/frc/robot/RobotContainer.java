@@ -7,9 +7,22 @@ package frc.robot;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
+
+import static frc.robot.Constants.Intake.intakeButtonID;
+
+import edu.wpi.first.math.controller.ElevatorFeedforward;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.Joystick.*;
+import edu.wpi.first.wpilibj.XboxController.*;
+import frc.robot.commands.IntakeyWakey;
+import frc.robot.subsystems.Intake;
+import static frc.robot.Constants.Intake.*;
+
+import frc.robot.subsystems.Shooter;
+
 //import frc.lib.util.ButtonMap;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -17,12 +30,17 @@ import edu.wpi.first.wpilibj.XboxController;
  * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
  * subsystems, commands, and button mappings) should be declared here.
  */
+
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Joystick driverJoystick = new Joystick(0);
   private final Joystick operatorJoystick = new Joystick(1);
   private final Drivetrain m_drivetrain = new Drivetrain();
   private final Drive m_drive = new Drive(m_drivetrain);
+  private final Intake m_Intake = new Intake();
+  private final IntakeyWakey m_IntakeyWakey = new IntakeyWakey(m_Intake);
+  private final Shooter m_Shooter = new Shooter();
+ // private final ShootMaBooty m_ShootMaBooty = new ShootMaBooty(m_Shooter);
   private final Command m_autoCommand = new Autonomous(m_drivetrain);
 
 
@@ -41,6 +59,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     m_drive.withLeft(() -> driverJoystick.getRawAxis(0)).withRight(() -> driverJoystick.getRawAxis(1));
+
+    m_IntakeyWakey.ActivateVroom(() -> driverJoystick.getRawButton(intakeButtonID));
   }
 
   /**

@@ -69,7 +69,6 @@ public void allstop() {
   m_rightFollow.set(0);
   m_leftMotor.set(0);
   m_leftFollow.set(0);
-
  }
 
 }

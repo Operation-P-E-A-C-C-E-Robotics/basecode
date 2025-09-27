@@ -26,10 +26,11 @@ public final class Constants {
     public static final class Intake
     {
         //MOTOR CANIDS
-        public static final int rightRoller = 0;//TODO, PWM
-        public static final int leftRoller = 0;//TODO, PWM
+        public static final int rightRoller = 0;// PWM
+        public static final int leftRoller = 1;// PWM
         public static final double motorIntakeSpeed = 0.3;
         public static final int intakeButtonID = 3;
+        //DEPLOY IS 2 BTW BUT I DONT THINK ITS TECHNICALLY IN THE INTAKE SUBSYSTEM, UR GONNA HAVE TO MAKE ONE JUST FOR DEPLOY (pmw too btw)
     }
 
     public static final class Shooter
